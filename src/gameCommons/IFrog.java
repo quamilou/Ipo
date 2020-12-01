@@ -22,4 +22,8 @@ public interface IFrog {
 	 */
 	public void move(Direction key);
 
+	public int getOrd();
+
+	public int getScore();
+
 }

@@ -29,17 +29,27 @@ public class Frog implements IFrog {
 	public void move(Direction key) {
 		switch (key){
 			case up:
-				if(aCase.ord < 20) aCase = new Case(aCase.absc, aCase.ord + 1);
+				if(aCase.ord < game.height) aCase = new Case(aCase.absc, aCase.ord + 1);
 				break;
 			case down:
-				aCase = new Case(aCase.absc, aCase.ord - 1);
+				if(aCase.ord > 0) aCase = new Case(aCase.absc, aCase.ord - 1);
 				break;
 			case right:
-				if(aCase.absc < 26) aCase = new Case(aCase.absc + 1, aCase.ord);
+				if(aCase.absc < game.width) aCase = new Case(aCase.absc + 1, aCase.ord);
 				break;
 			case left:
 				if(aCase.absc > 0) aCase = new Case(aCase.absc -1, aCase.ord);
 				break;
 		}
+	}
+
+	@Override
+	public int getOrd() {
+		return aCase.ord;
+	}
+
+	@Override
+	public int getScore() {
+		return 0;
 	}
 }

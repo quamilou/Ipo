@@ -1,10 +1,11 @@
 package gameCommons;
 
+import java.awt.Color;
+import java.util.Random;
+
+import environment.EnvInf;
 import graphicalElements.Element;
 import graphicalElements.IFroggerGraphics;
-
-import java.awt.*;
-import java.util.Random;
 
 public class Game {
 
@@ -99,8 +100,12 @@ public class Game {
 		graphic.clear();
 		environment.update();
 		this.graphic.add(new Element(frog.getPosition(), Color.GREEN));
-		if (testLose()) graphic.endGameScreen("You are dead :/");
+		if (testLose())
+			if (environment.getClass() == EnvInf.class) graphic.endGameScreen("You are dead :/\nYour score: " + frog.getScore());
+			else graphic.endGameScreen("You are dead :/");
 		if (testWin()) graphic.endGameScreen("You win!!");
 	}
+
+	public int getFrogOrd(){ return frog.getOrd(); }
 
 }

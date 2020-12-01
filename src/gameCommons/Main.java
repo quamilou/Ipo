@@ -1,7 +1,7 @@
 package gameCommons;
 
-import frog.Frog;
-import givenEnvironment.GivenEnvironment;
+import environment.EnvInf;
+import frog.FrogInf;
 import graphicalElements.FroggerGraphic;
 import graphicalElements.IFroggerGraphics;
 
@@ -13,7 +13,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//Caractéristiques (taille, affichage de l'executable)
+		//Caractéristiques du jeu
 		int width = 26;
 		int height = 20;
 		int tempo = 100;
@@ -25,11 +25,11 @@ public class Main {
 		//Création de la partie
 		Game game = new Game(graphic, width, height, minSpeedInTimerLoops, defaultDensity);
 		//Création et liason de la grenouille
-		IFrog frog = new Frog(game);
+		IFrog frog = new FrogInf(game);
 		game.setFrog(frog);
 		graphic.setFrog(frog);
 		//Création et liaison de l'environnement
-		IEnvironment env = new GivenEnvironment(game);
+		IEnvironment env = new EnvInf(game);
 		game.setEnvironment(env);
 				
 		//Boucle principale : l'environnement s'acturalise tous les tempo milisecondes

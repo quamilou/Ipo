@@ -1,8 +1,8 @@
 package graphicalElements;
 
-import gameCommons.Case;
-
 import java.awt.*;
+
+import gameCommons.Case;
 
 
 public class Element extends Case {
