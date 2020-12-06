@@ -1,5 +1,6 @@
 package gameCommons;
 
+import util.Case;
 import util.Direction;
 
 public interface IFrog {
@@ -11,19 +12,18 @@ public interface IFrog {
 	public Case getPosition();
 	
 	/**
-	 * Donne la direction de la grenouille, c'est é dire de son dernier mouvement
+	 * Donne la direction de la grenouille, c'est � dire de son dernier mouvement 
 	 * @return
 	 */
 	public Direction getDirection();
 	
 	/**
-	 * Déplace la grenouille dans la direction donnée et teste la fin de partie
+	 * D�place la grenouille dans la direction donn�e et teste la fin de partie
 	 * @param key
 	 */
 	public void move(Direction key);
 
-	public int getOrd();
+	int getOrd();
 
-	public int getScore();
-
+	int getScore();
 }

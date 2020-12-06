@@ -5,13 +5,13 @@ import gameCommons.IFrog;
 public interface IFroggerGraphics {
 	
 	/**
-	 * Ajoute l'Ã©lÃ©ment aux Ã©lÃ©ments Ã© afficher
+	 * Ajoute l'élément aux éléments à afficher
 	 * @param e
 	 */
     public void add(Element e);
     
     /**
-     * EnlÃ©ve tous les Ã©lÃ©ments actuellement affichÃ©s
+     * Enlève tous les éléments actuellement affichés
      */
     public void clear();
     
@@ -21,14 +21,14 @@ public interface IFroggerGraphics {
     public void repaint();
     
     /**
-     * Lie la grenouille Ã© l'environneemnt graphique
+     * Lie la grenouille à l'environneemnt graphique
      * @param frog
      */
     public void setFrog(IFrog frog);
     
     /**
-     * Lance un Ã©cran de fin de partie
-     * @param message le texte Ã© afficher
+     * Lance un écran de fin de partie
+     * @param message le texte à afficher
      */
     public void endGameScreen(String message);
 }

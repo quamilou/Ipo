@@ -1,11 +1,12 @@
 package gameCommons;
 
-import java.awt.Color;
-import java.util.Random;
-
-import environment.EnvInf;
+import environment.Environment;
 import graphicalElements.Element;
 import graphicalElements.IFroggerGraphics;
+import util.Case;
+
+import java.awt.*;
+import java.util.Random;
 
 public class Game {
 
@@ -17,7 +18,7 @@ public class Game {
 	public final int minSpeedInTimerLoops;
 	public final double defaultDensity;
 
-	// Lien aux objets utilisés
+	// Lien aux objets utilis�s
 	private IEnvironment environment;
 	private IFrog frog;
 	private IFroggerGraphics graphic;
@@ -31,7 +32,7 @@ public class Game {
 	 * @param height
 	 *            hauteur en cases
 	 * @param minSpeedInTimerLoop
-	 *            Vitesse minimale, en nombre de tour de timer avant déplacement
+	 *            Vitesse minimale, en nombre de tour de timer avant d�placement
 	 * @param defaultDensity
 	 *            densite de voiture utilisee par defaut pour les routes
 	 */
@@ -71,25 +72,25 @@ public class Game {
 	}
 
 	/**
-	 * Teste si la partie est perdue et lance un écran de fin approprié si tel
+	 * Teste si la partie est perdue et lance un �cran de fin appropri� si tel
 	 * est le cas
 	 * 
 	 * @return true si le partie est perdue
 	 */
 	public boolean testLose() {
-		Case c = frog.getPosition();
-		return !environment.isSafe(c);
+		Case g = frog.getPosition();
+		return !environment.isSafe(g);
 	}
 
 	/**
-	 * Teste si la partie est gagnee et lance un écran de fin approprié si tel
+	 * Teste si la partie est gagnee et lance un �cran de fin appropri� si tel
 	 * est le cas
 	 * 
-	 * @return true si la partie est gagnée
+	 * @return true si la partie est gagn�e
 	 */
 	public boolean testWin() {
-		Case c = frog.getPosition();
-		return environment.isWinningPosition(c);
+		Case g = frog.getPosition();
+		return environment.isWinningPosition(g);
 	}
 
 	/**
@@ -101,11 +102,12 @@ public class Game {
 		environment.update();
 		this.graphic.add(new Element(frog.getPosition(), Color.GREEN));
 		if (testLose())
-			if (environment.getClass() == EnvInf.class) graphic.endGameScreen("You are dead :/\nYour score: " + frog.getScore());
-			else graphic.endGameScreen("You are dead :/");
-		if (testWin()) graphic.endGameScreen("You win!!");
+			if (environment.getClass() == Environment.class) graphic.endGameScreen("Game Over\n Score: " + frog.getScore());
+			else graphic.endGameScreen("Game Over");
+		if (testWin()) graphic.endGameScreen("Victory!");
 	}
 
-	public int getFrogOrd(){ return frog.getOrd(); }
-
+	public int getFrogOrd() {
+		return frog.getOrd();
+	}
 }

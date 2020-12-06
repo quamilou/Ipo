@@ -19,7 +19,7 @@ public class Main {
 		int tempo = 100;
 		int minSpeedInTimerLoops = 3;
 		double defaultDensity = 0.2;
-		
+
 		//Création de l'interface graphique
 		IFroggerGraphics graphic = new FroggerGraphic(width, height);
 		//Création de la partie
@@ -31,7 +31,7 @@ public class Main {
 		//Création et liaison de l'environnement
 		IEnvironment env = new EnvInf(game);
 		game.setEnvironment(env);
-				
+
 		//Boucle principale : l'environnement s'acturalise tous les tempo milisecondes
 		Timer timer = new Timer(tempo, new ActionListener() {
 			@Override

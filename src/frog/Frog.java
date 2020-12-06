@@ -2,7 +2,7 @@ package frog;
 
 import gameCommons.Game;
 import gameCommons.IFrog;
-import gameCommons.Case;
+import util.Case;
 import util.Direction;
 
 public class Frog implements IFrog {
