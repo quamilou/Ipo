@@ -4,7 +4,6 @@ import graphicalElements.Element;
 import graphicalElements.IFroggerGraphics;
 import util.Case;
 
-import java.awt.*;
 import java.util.Random;
 
 public class Game {

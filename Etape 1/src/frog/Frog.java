@@ -1,8 +1,8 @@
 package frog;
 
 import gameCommons.Game;
-import util.Case;
 import gameCommons.IFrog;
+import util.Case;
 import util.Direction;
 
 public class Frog implements IFrog {

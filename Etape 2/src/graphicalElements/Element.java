@@ -1,7 +1,5 @@
 package graphicalElements;
 
-import java.awt.*;
-
 import util.Case;
 
 

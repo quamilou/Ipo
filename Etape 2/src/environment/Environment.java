@@ -1,10 +1,10 @@
 package environment;
 
-import java.util.ArrayList;
-
-import util.Case;
 import gameCommons.Game;
 import gameCommons.IEnvironment;
+import util.Case;
+
+import java.util.ArrayList;
 
 public class Environment implements IEnvironment {
     private ArrayList<Lane> lanes = new ArrayList<>();
