@@ -4,8 +4,6 @@ import gameCommons.Game;
 import graphicalElements.Element;
 import util.Case;
 
-import java.awt.*;
-
 public class Car {
 	private Game game;
 	private Case leftPosition;
