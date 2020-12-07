@@ -1,6 +1,6 @@
 package gameCommons;
 
-import environment.Environment;
+import environment.EnvInf;
 import graphicalElements.Element;
 import graphicalElements.IFroggerGraphics;
 import util.Case;
@@ -102,8 +102,8 @@ public class Game {
 		environment.update();
 		this.graphic.add(new Element(frog.getPosition(), Color.GREEN));
 		if (testLose())
-			if (environment.getClass() == Environment.class) graphic.endGameScreen("Game Over\n Score: " + frog.getScore());
-			else graphic.endGameScreen("Game Over");
+			if (environment.getClass() == EnvInf.class) graphic.endGameScreen("Game Over\n Score: " + frog.getScore());
+			else graphic.endGameScreen("Game Over!!!");
 		if (testWin()) graphic.endGameScreen("Victory!");
 	}
 
